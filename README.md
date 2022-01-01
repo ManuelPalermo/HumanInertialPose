@@ -2,12 +2,10 @@
 # Human Inertial Pose
 Human whole-body pose estimation using inertial sensor data.
 
+https://user-images.githubusercontent.com/794111/147855142-25f2cc08-d4f8-4aea-9510-814c9f388e3c.mp4
 
-<video width="640" height="480" controls>
-  <source src="./resources/demo_video.mp4" type="video/mp4">
-</video>
 
-(Demo video: (Left) Xsens GT; (Right) MTwAwinda MARG sensor data fused using this library.)
+(Demo video: (Left) Xsens-Analyse GT; (Right) MTwAwinda MARG sensor data fused using this library.)
 
 
 
