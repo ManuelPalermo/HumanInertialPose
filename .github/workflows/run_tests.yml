@@ -1,0 +1,41 @@
+# This workflow will run all tests available
+# examples:  https://github.com/actions/starter-workflows/tree/main/ci
+
+name: Run Tests
+
+on:
+  push:
+    branches: [ $default-branch  ]  # has to be changed to "main" to run automatically on push to main branch (manual run for now)
+  pull_request:
+    branches: [ $default-branch  ]  # has to be changed to "main" to run automatically on push to main branch (manual run for now)
+
+  # add option to launch manually
+  workflow_dispatch:
+
+
+# jobs to run:
+jobs:
+
+  Unittests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+        python-version: [3.9]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ."[all]"
+
+      - name: Run tests
+        run: |
+          sh ./test/test.sh
