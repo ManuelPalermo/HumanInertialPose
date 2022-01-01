@@ -146,7 +146,6 @@ def parse_cip_mtwawinda_dataset(dataset_root_path, subject_ids, sequence_ids, re
             in cip_mtwawinda_database_iterator(dataset_root_path, subject_ids,
                                                sequence_ids, repetition_ids):
 
-        print(trial_id)
         try:
             t_start = time.perf_counter()
 
