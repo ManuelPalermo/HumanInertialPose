@@ -1,0 +1,7 @@
+
+Some relevant datasets can be downloaded to this directory for parsing,
+by ollowing the instructions in the respective sites:
+
+TotalCapture:       https://cvssp.org/data/totalcapture/
+DIP-IMU:            https://dip.is.tue.mpg.de/
+CIP (ours):         https://doi.org/10.5281/zenodo.5801928
