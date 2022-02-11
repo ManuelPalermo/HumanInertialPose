@@ -53,10 +53,10 @@ for idx, (acc, gyr, mag) in enumerate(zip(imu_data["acc"][calib_s:],
                                           imu_data["gyr"][calib_s:],
                                           imu_data["mag"][calib_s:])):
     pred_ori = ffilts.update(acc=acc, gyr=gyr, mag=mag)
-
 ```
-Look at ```/examples/example_visualize_evaluate_inertial_pose.py``` for a more 
-detailed example showing additional features (e.g. 3D skeleton display, 
+
+Look at ```/examples/example_visualize_evaluate_inertial_pose.py``` for a more
+detailed example showing additional features (e.g. 3D skeleton display,
 skeleton mapping, metrics calculation, etc...).
 
 
@@ -66,21 +66,23 @@ skeleton mapping, metrics calculation, etc...).
 
 
 # Installation
+
+Minimal Installation
 ```bash
-# download and install the library (and dependencies)
-git clone https://github.com/BiRDLab-UMinho/HumanInertialPose.git       # 
-cd HumanInertialPose/
-python -m pip install --upgrade pip                                     # update pip
-pip install -e .                                                        # installs package with base requirements
-# pip install -e ."[parse,plot,vis3d,test,doc]"  # or ."[all]"          # installs package with extra dependencies
-````
+pip install hipose                                # install package with base requirements
+```
+
+Complete Installation
+```bash
+pip install hipose"[parse,plot,vis3d,test,doc]"   # install package with desired extra dependencies
+# pip install hipose"[all]"                       # or install package with all extra dependencies
+```
 
 
+# TODOs
 
-
-# TODOs:
 (Pull Request are welcome!)
-- [ ] Add parsing utils for commonly used inertial pose estimation datasets in the literature 
+- [ ] Add parsing utils for commonly used inertial pose estimation datasets in the literature.
   - [ ] [DIP_IMU](https://dip.is.tuebingen.mpg.de/).
   - [ ] [TotalCapture](https://cvssp.org/data/totalcapture/).
 - [ ] Improve dynamic optimization s2s calibration method.
@@ -88,24 +90,23 @@ pip install -e .                                                        # instal
 - [ ] Improve unittest coverage.
 - [ ] Improve Docs.
 
-
-
-
 ---
-
-
 
 
 # Development
 
+### Install latest repository version
+```bash
+git clone https://github.com/ManuelPalermo/HumanInertialPose.git
+cd HumanInertialPose/
+pip install -e .                                                        # install package with base requirements
+# pip install -e ."[parse,plot,vis3d,test,doc]"  # or ."[all]"          # install package with extra dependencies
+```
+
 ### Running Unittests
 
 Unittests should ideally be added to cover all implemented code and should be run before submitting any commit!
-
-Running them requires additional dependencies which can be installed with:
-```bash
-pip install -e ."[test]"
-```
+Running them requires additional dependencies which can be installed with: ```pip install -e ."[test]"```
 
 Tests can be run by calling (from the project root) one of:
 ```bash
@@ -114,17 +115,13 @@ sh test/test.sh               # run all unittests
 ```
 
 ### Building docs
-Building the api documentation requires additional dependencies which can be installed with:
-```bash
-pip install -e ."[doc]"
-```
+Building the api documentation requires additional dependencies which can be installed with: ```pip install -e ."[doc]"```
 
 The docs can be compiled by calling (from the project root):
 ```bash
 cd docs
 make html
 ```
-
 
 ### Common Problems / Fixes
 
@@ -133,10 +130,7 @@ make html
 https://unix.stackexchange.com/questions/655495/trying-to-run-pygame-on-my-conda-environment-on-my-fresh-manjaro-install-and-ge
 
 
-
 ---
-
-
 
 
 # Citation:
