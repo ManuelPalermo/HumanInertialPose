@@ -33,7 +33,8 @@ setup(name="hipose",
       install_requires=requires_list,
       extras_require=extras,
       classifiers=[
-              "Programming Language :: Python :: 3",
+              "Development Status :: 3 - Alpha",
+              "Programming Language :: Python :: 3.9",
               "License :: OSI Approved :: MIT License",
               "Operating System :: OS Independent"],
       )

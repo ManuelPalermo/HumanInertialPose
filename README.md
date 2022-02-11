@@ -1,6 +1,17 @@
-
 # Human Inertial Pose
+
+---
+
+![PyPI - License](https://img.shields.io/pypi/l/hipose)
+![PyPI - Version](https://img.shields.io/pypi/v/hipose)
+![GitHub Workflow Status](https://github.com/ManuelPalermo/HumanInertialPose/actions/workflows/run_tests.yml/badge.svg?branch=main)
+![Codecov](https://codecov.io/gh/ManuelPalermo/HumanInertialPose/branch/main/graph/badge.svg)
+<!---
+![PyPI Status](https://pepy.tech/badge/hipose)
+--->
 Human whole-body pose estimation using inertial sensor data.
+
+
 
 https://user-images.githubusercontent.com/794111/147855142-25f2cc08-d4f8-4aea-9510-814c9f388e3c.mp4
 

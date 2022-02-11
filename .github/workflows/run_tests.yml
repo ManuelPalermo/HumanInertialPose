@@ -36,3 +36,13 @@ jobs:
       - name: Run tests
         run: |
           sh ./test/test.sh
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          env_vars: OS,PYTHON
+          files: ./coverage_report.xml
+          flags: unittests
+          name: codecov-umbrella-hipose
+          fail_ci_if_error: false
+          verbose: true
