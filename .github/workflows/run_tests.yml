@@ -1,13 +1,10 @@
-# This workflow will run all tests available
-# examples:  https://github.com/actions/starter-workflows/tree/main/ci
-
 name: Run Tests
 
 on:
   push:
-    branches: [ $default-branch  ]  # has to be changed to "main" to run automatically on push to main branch (manual run for now)
+    branches: [ main ]
   pull_request:
-    branches: [ $default-branch  ]  # has to be changed to "main" to run automatically on push to main branch (manual run for now)
+    branches: [ main ]
 
   # add option to launch manually
   workflow_dispatch:
@@ -20,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-20.04]
+        os: [ubuntu-latest]
         python-version: [3.9]
 
     steps:
