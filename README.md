@@ -1,14 +1,11 @@
 # Human Inertial Pose
 
----
-
-![PyPI - License](https://img.shields.io/pypi/l/hipose)
-![PyPI - Version](https://img.shields.io/pypi/v/hipose)
 ![GitHub Workflow Status](https://github.com/ManuelPalermo/HumanInertialPose/actions/workflows/run_tests.yml/badge.svg?branch=main)
 ![Codecov](https://codecov.io/gh/ManuelPalermo/HumanInertialPose/branch/main/graph/badge.svg)
-<!---
-![PyPI Status](https://pepy.tech/badge/hipose)
---->
+![PyPI - License](https://img.shields.io/pypi/l/hipose)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hipose)
+![PyPI - Version](https://img.shields.io/pypi/v/hipose)
+
 Human whole-body pose estimation using inertial sensor data.
 
 
@@ -20,7 +17,7 @@ https://user-images.githubusercontent.com/794111/147855142-25f2cc08-d4f8-4aea-95
 
 
 
-# Contains code to:
+# Contains code to
 * Calculate sensors orientation (based on [ahrs](https://github.com/Mayitzin/ahrs/)) library.
 * Perform sensor-to-segment calibration.
 * Perform imu sensor calibration.
@@ -56,8 +53,8 @@ ffilts = InertialPoseFusionFilter(
 # (example trial has 5s of NPose at the start)
 calib_s = int(imu_data["freq"] * 5)
 ffilts.compute_imus_calibration(acc_calib_data=imu_data["acc"][0:calib_s],
-                              gyr_calib_data=imu_data["gyr"][0:calib_s],
-                              mag_calib_data=imu_data["mag"][0:calib_s])
+                                gyr_calib_data=imu_data["gyr"][0:calib_s],
+                                mag_calib_data=imu_data["mag"][0:calib_s])
 
 # perform filter fusion on trial data to obtain segment orientations
 for idx, (acc, gyr, mag) in enumerate(zip(imu_data["acc"][calib_s:],
@@ -136,7 +133,7 @@ make html
 
 ### Common Problems / Fixes
 
-#### 3D Visualizer:
+#### 3D Visualizer
 * "libGL error: MESA-LOADER: failed to open swrast : .../lib/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by /usr/lib/dri/swrast_dri.so) (search paths /usr/lib/dri)":
 https://unix.stackexchange.com/questions/655495/trying-to-run-pygame-on-my-conda-environment-on-my-fresh-manjaro-install-and-ge
 
@@ -144,16 +141,37 @@ https://unix.stackexchange.com/questions/655495/trying-to-run-pygame-on-my-conda
 ---
 
 
-# Citation:
-If you find the project helpful, please consider citing us (temporary citation):
+# Acknowledgements
+
+This project was developed from a research scholarship at the 
+[BirdLab-UMinho](http://birdlab.dei.uminho.pt/), supported by grant POCI-01-0247-FEDER-39479.
+You can check out other works being developed there through the lab's
+([Github](https://github.com/BiRDLab-UMinho) / [Instagram](https://www.instagram.com/bird.uminho) / [Facebook](https://www.facebook.com/BiRDLab.Uminho/)). 
+
+A special thanks to the people in the [Ergoaware project](http://birdlab.dei.uminho.pt/ergoaware/) 
+who also contributed to the library through helpful discussions, data acquisition and testing.
+
+
+  
+# Citation
+If you find the project helpful, please consider citing us (temporary citations):
 ```
-@misc{palermo2022cipdatabase,
-    author    = {Palermo, Manuel and Cerqueira, Sara and André, João and C. Santos, Cristina},
-    title     = {Complete Inertial Pose (CIP) Dataset},
-    month     = jan,
-    year      = 2022,
-    publisher = {Zenodo},
-    doi       = {10.5281/zenodo.5801928},
-    url       = {https://doi.org/10.5281/zenodo.5801928}
+@misc{palermo2022complete,
+    author      = {Manuel Palermo and Sara Cerqueira and João André and António Pereira and Cristina P. Santos},
+    title       = {Complete Inertial Pose Dataset: from raw measurements to pose with low-cost and high-end MARG sensors},
+    year        = {2022},
+    eprint      = {2202.06164},
+    eprinttype  = {arXiv},
+    url         = {https://arxiv.org/abs/2202.06164}
+}
+```
+```
+@dataset{palermo2022cipdatabase,
+    author       = {Manuel Palermo and Sara Cerqueira and João André and António Pereira and Cristina P. Santos},
+    title        = {Complete Inertial Pose (CIP) Dataset},
+    year         = {2022},
+    publisher    = {Zenodo},
+    doi          = {10.5281/zenodo.5801928},
+    url          = {https://doi.org/10.5281/zenodo.5801928}
 }
 ```
