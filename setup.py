@@ -22,18 +22,22 @@ extras = {
 }
 extras["all"] = list(itertools.chain(*extras.values()))
 
+with open("README.md", "r") as freadme:
+    long_description = freadme.read()
+
 setup(name="hipose",
       version=__version__,
       description="Human whole-body pose estimation using MARG multi-sensor data.",
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       author="ManuelPalermo",
       author_email="macpalermo@gmail.com",
       url="https://github.com/ManuelPalermo/HumanInertialPose",
-      license='MIT',
       packages=["hipose"],
+      license="MIT",
       install_requires=requires_list,
       extras_require=extras,
       classifiers=[
-              "Development Status :: 3 - Alpha",
               "Programming Language :: Python :: 3.9",
               "License :: OSI Approved :: MIT License",
               "Operating System :: OS Independent"],
